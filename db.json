@@ -1,0 +1,579 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-07-17T11:44:50.946Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2023-07-17T11:44:53.970Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2023-07-17T11:45:32.259Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Image for Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2023-07-17T11:45:48.457Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Image for Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2023-07-17T11:45:53.494Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Image for Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2023-07-17T12:06:13.032Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Kristoff GC Signature Series Churchill 7 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2023-07-17T12:06:30.452Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Image for Kristoff GC Signature Series Churchill 7 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2023-07-17T14:05:26.496Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Price",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2023-07-17T14:05:53.308Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Price",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-07-17T14:49:47.642Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Price",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2023-07-17T14:50:07.094Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Quantity",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2023-07-18T13:31:31.756Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Price",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2023-07-18T13:33:39.424Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Image for Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2023-07-18T13:38:13.416Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Image for Kristoff GC Signature Series Churchill 7 x 50",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2023-07-18T13:43:10.947Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Image for 1502 Emerald Robusto 5 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2023-07-18T13:43:38.964Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Image for 1502 Emerald Robusto 5 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2023-07-20T13:06:09.492Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2023-07-20T13:06:13.678Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2023-07-20T13:06:19.672Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "category",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2023-07-20T13:06:29.814Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "category",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2023-07-20T13:40:44.167Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Value\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2023-07-20T13:40:47.840Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Value\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2023-07-20T13:40:52.834Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Value\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-07-22T10:15:56.739Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "category",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-07-22T10:16:01.606Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "category",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-07-22T10:16:06.655Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-07-22T10:19:56.883Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "packaging",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2023-07-22T10:20:06.082Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "packaging",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2023-07-23T16:09:48.972Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "1502 Aniversario 10 Toro 6×50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2023-07-23T16:09:57.198Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "Image for 1502 Aniversario 10 Toro 6×50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2023-07-23T16:10:14.992Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "1502 Aniversario 10 Toro 6×50",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2023-07-23T16:10:26.829Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "Image for 1502 Aniversario 10 Toro 6×50",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2023-07-23T16:10:31.988Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "Image for 1502 Aniversario 10 Toro 6×50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2023-07-24T13:18:16.114Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "name": "Perdomo 10th Anniversary Reserve Churchill Connecticut 7×54",
+        "slug": "perdomo-10th-anniversary-reserve-churchill-connecticut-754",
+        "created": "2023-07-17T12:02:13.870Z",
+        "updated": "2023-07-18T13:33:39.422Z",
+        "price": "230.00"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "name": "Kristoff GC Signature Series Churchill 7 x 50",
+        "slug": "kristoff-gc-signature-series-churchill-7-x-50",
+        "created": "2023-07-17T12:06:13.031Z",
+        "updated": "2023-07-18T13:38:13.415Z",
+        "price": "175.00"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "name": "1502 Emerald Robusto 5 x 50",
+        "slug": "1502-emerald-robusto-5-x-50",
+        "created": "2023-07-18T13:43:10.943Z",
+        "updated": "2023-07-18T13:43:10.943Z",
+        "price": "185.00"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "name": "1502 Aniversario 10 Toro 6×50",
+        "slug": "1502-aniversario-10-toro-650",
+        "created": "2023-07-23T16:09:48.967Z",
+        "updated": "2023-07-23T16:10:14.989Z",
+        "price": "130.00"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 1,
+    "fields": {
+        "product": 1,
+        "image": "kutia-i-pura-600x600.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 2,
+    "fields": {
+        "product": 1,
+        "image": "DSC_9372-600x600.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 3,
+    "fields": {
+        "product": 1,
+        "image": "DSC_9376-600x600.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 4,
+    "fields": {
+        "product": 2,
+        "image": "4x4kutia-i-pura-600x600.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 5,
+    "fields": {
+        "product": 3,
+        "image": "Emerald_9398-1-600x600_eIDtPcU.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 6,
+    "fields": {
+        "product": 4,
+        "image": "anniversario10_2_AF5OUhV.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 7,
+    "fields": {
+        "product": 4,
+        "image": "aniversario10_FUJfHva.jpg"
+    }
+},
+{
+    "model": "products.field",
+    "pk": 3,
+    "fields": {
+        "name": "Quantity",
+        "value": "25",
+        "product": []
+    }
+},
+{
+    "model": "products.field",
+    "pk": 4,
+    "fields": {
+        "name": "category",
+        "value": "Cigars",
+        "product": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 7,
+    "fields": {
+        "name": "packaging",
+        "value": "Box",
+        "product": [
+            1,
+            2,
+            3
+        ]
+    }
+}
