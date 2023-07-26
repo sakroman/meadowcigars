@@ -8,6 +8,7 @@
 
 body {
     background-color: #CC9966;
+    overflow-x: hidden;
 }
 
 a.nav-link,
@@ -34,6 +35,7 @@ a.nav-link:active {
 
 
 .footer {
+  overflow-x: hidden;
   position: absolute;
   width: 100%;
 }
