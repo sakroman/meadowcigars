@@ -1,0 +1,102 @@
+{% extends 'general/main.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="py-5 bg-dark text-white">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6 mb-4">
+                    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for image in product.productimage_set.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <img src="{{ image.image.url }}" class="d-block w-100" alt="Product Image">
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev bg-dark text-white" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next bg-dark text-white" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                    <div class="fs-5 mb-4">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+
+                            <button type="submit" class="wishlist-btn btn btn-outline-light" data-product-id="{{product.pk}}">
+                                <i class="far fa-heart me-2"></i> Add to Wishlist
+                            </button>
+
+                        <div class="input-group form-control" style="max-width: 120px;">
+                            <input class="form-control text-center" id="inputQuantity" type="number" value="1" min="1">
+                        </div>
+                        <button class="btn btn-outline-light mt-3" type="button">
+                            <i class="bi-cart-fill me-2"></i> Add to Cart
+                        </button>
+                    </div>
+                    <h2 class="m-1 fw-bolder">{{ product.price }}£</h2>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+        </div>
+        <hr>
+    </section>
+{% endblock content %}
+
+{% block javascript %}
+ <script>
+            const productId = {{ product.pk }};
+            const wishlistUrl = '{% url 'user:add_to_wishlist' %}';
+            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+            const isWishlisted = {{ is_wishlisted|yesno:"true,false" }};
+
+            wishlistButtons.forEach(button => {
+                if (isWishlisted) {
+                    button.querySelector('i').classList.remove('far');
+                    button.querySelector('i').classList.add('fas');
+                    button.querySelector('i').style.animation = 'fillHeart 0.5s forwards';
+                }
+                button.addEventListener('click', () => {
+                    console.log('Button clicked');
+
+
+                    fetch(wishlistUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken'), // Get the CSRF token
+                        },
+                        body: JSON.stringify(productId),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        let wishlistIcon = button.querySelector('i');
+                        // Update the heart icon based on the response from the server
+                        if (data.added) {
+                            wishlistIcon.classList.remove('far');
+                            wishlistIcon.classList.add('fas');
+                            wishlistIcon.style.animation = 'fillHeart 0.5s forwards';
+                        } else {
+                            wishlistIcon.classList.remove('fas');
+                            wishlistIcon.classList.add('far');
+                            wishlistIcon.style.animation = 'none';
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                });
+            });
+
+
+ </script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'general/main.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+  <div class="my-account-header page-title normal-title bg-dark text-white p-3 custom-border-bottom">
+    <div class="page-title-inner flex-row container text-left">
+      <div class="flex-col flex-grow medium-text-center">
+        <h1 class="uppercase mb-0 border border-dark">My Profile</h1>
+      </div>
+    </div>
+  </div>
+<div class="row gx-4 gx-lg-5">
+<div class="col-lg-3 mb-4">
+    <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-3 mb-4">
+<!--        {% if not request.user.image %}-->
+<!--        <img class="avatar img-fluid rounded-circle mb-3" src="{% static 'images/noun-profile-5034901.svg' %}" alt="" style="width: 100px;">-->
+<!--        {% endif %}-->
+        <h3 class="mb-3">{{ request.user.username }}</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:cart' %}">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:wishlist' %}">Wishlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:profile-settings' %}">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+             </div>
+           </div>
+             </div>
+      <div class="col-lg-9">
+        <!-- Additional content related to user profile can be added here -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

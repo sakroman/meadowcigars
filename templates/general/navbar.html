@@ -1,0 +1,106 @@
+{% load static %}
+
+<header class="nav p-3 d-flex justify-content-between">
+  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+    <li>
+      <a href="{% url 'home' %}" class="header__logo">
+        <img src="{% static 'images/logo.svg' %}" style="width: 89px; height: 42px">
+      </a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>Categories</span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+            <li><a class="dropdown-item" href="{% url 'products:category' category='Brands' %}">Brands</a></li>
+            <li><a class="dropdown-item" href="{% url 'products:category' category='Cigars' %}">Cigars</a></li>
+        </ul>
+    </li>
+  </ul>
+
+  <div class="d-flex align-items-center">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 px-3 d-flex align-items-center">
+      <input type="search" name="q" class="custom-search form-control border-3" placeholder="Search..." aria-label="Search">
+      <i class="fas fa-search mx-3"></i>
+    </form>
+
+    <div class="text-end ms-auto">
+      <a href="{% url 'user:wishlist' %}"><i class="fas fa-heart mx-3 text-white"></i></a>
+      <a href="{% url 'user:cart' %}"><i class="fas fa-shopping-cart mx-3 text-white"></i></a>
+      {% if not request.user.is_authenticated %}
+      <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">
+        Login/Register
+      </button>
+      {% else %}
+
+          <button type="button" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-light me-2 dropdown-toggle">
+            {{ request.user.username }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+            <li><a class="dropdown-item" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a></li>
+          </ul>
+
+      {% endif %}
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginRegisterModalLabel">Login/Register</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- Login form -->
+                  <p class="form-heading"><strong>Log in</strong></p>
+                  <form class="form" action="{% url 'user:login' %}?next={{ request.get_full_path }}" method="POST">
+                    {% csrf_token %}
+                    <div>
+                      <label for="username">Username:</label>
+                      <input class="form-control" type="text" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div>
+                      <label for="password">Password:</label>
+                      <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <button class="btn btn-outline-light me-2 mt-3" type="submit">Log in</button>
+                  </form>
+                </div>
+                <div class="col-md-6">
+                  <!-- Register form -->
+                  <p class="form-heading"><strong>Register</strong></p>
+                  <form class="form" action="{% url 'user:registration' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="username">Username:</label>
+                      <input class="form-control" type="text" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password1">Password:</label>
+                      <input class="form-control" type="password" id="password1" name="password1" placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                      <label for="password2">Confirm Password:</label>
+                      <input class="form-control" type="password" id="password2" name="password2" placeholder="Enter your password">
+                    </div>
+                    <button class="btn btn-outline-light me-2 mt-3" type="submit">Register</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
