@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.utils.text import slugify
 
@@ -35,10 +37,29 @@ class Field(models.Model):
 
 
 class Order(models.Model):
-    ...
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    def __str__(self):
+        return f"Order {self.id}"
+
+    def update_total_price(self):
+        order_items = self.orderitem_set.all()
+        total_price = sum(item.get_total_price() for item in order_items)
+        self.total_price = Decimal(total_price)
+        self.save()
 
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    # quantity = models.
+    quantity = models.PositiveIntegerField(default=1)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    def __str__(self):
+        return f"OrderItem {self.id}"
+
+    def get_total_price(self):
+        return self.unit_price * self.quantity
