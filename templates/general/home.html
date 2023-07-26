@@ -40,7 +40,7 @@
     <div class="carousel-item active">
       <div class="row">
         {% for product in products|slice:":5" %}
-        <div class="col-sm-3">
+        <div class="card-pad col-sm-3">
           <div class="card border border-dark" style="width: 18rem;">
             <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top">
             <div class="card-body bg-dark text-white">
@@ -57,7 +57,7 @@
 
   </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" style="left: -180px;" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" style="left: -170px;" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
