@@ -73,6 +73,7 @@ class WishlistView(LoginRequiredMixin, ListView):
     model = Product
     template_name = 'users/wishlist.html'
     context_object_name = 'wishlist_items'
+    login_url = '../profile/1'
 
     def get_queryset(self):
         wishlist, _ = Wishlist.objects.get_or_create(user=self.request.user)

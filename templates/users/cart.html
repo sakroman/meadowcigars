@@ -24,25 +24,9 @@
                                 <!--        {% endif %}-->
                                         <h3 class="mb-3">{{ request.user.username }}</h3>
                                         <ul class="nav flex-column">
-                                          <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class="nav-link" href="">Orders</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" href="{% url 'user:cart' %}">Cart</a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'user:wishlist' %}">Wishlist</a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'user:profile-settings' %}">Settings</a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>
-                                          </li>
+
                                         </ul>
+
                                       </div>
                                     </div>
                                   </div>

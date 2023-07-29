@@ -16,11 +16,17 @@ class ProductView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        wishlist, _ = Wishlist.objects.get_or_create(user=self.request.user)
-        product = context['product']
-        context['is_wishlisted'] = product in wishlist.products.all()
-        return context
 
+        if self.request.user.is_authenticated:
+
+            wishlist, _ = Wishlist.objects.get_or_create(user=self.request.user)
+            product = context['product']
+            context['is_wishlisted'] = product in wishlist.products.all()
+        else:
+
+            context['is_wishlisted'] = False
+
+        return context
 
 # class ProductListView(ListView):
 #     model = Product
