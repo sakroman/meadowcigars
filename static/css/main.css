@@ -106,6 +106,12 @@ custom-vr {
   background-color: #CC9966;
 }
 
+.dropdown:hover .dropdown-menu-custom {
+    display: block;
+}
+
+
+
 .card-title {
     display: -webkit-box;
     max-width: 250px;

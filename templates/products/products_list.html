@@ -10,10 +10,10 @@
                 <button type="button" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-light dropdown-toggle">
                     Ordered by: {{ order_type }}
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                    <li><a class="dropdown-item" href="{% url 'products:category' category=category %}?order=price">By price (asc)</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products:category' category=category %}?order=price&dir=desc">By price (desc)</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products:category' category=category %}?order=name">By name</a></li>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
+                    <li><a class="dropdown-item" href="?order=price">By price (asc)</a></li>
+                    <li><a class="dropdown-item" href="?order=price&dir=desc">By price (desc)</a></li>
+                    <li><a class="dropdown-item" href="?order=name">By name</a></li>
                 </ul>
             </div>
         </div>
@@ -23,6 +23,14 @@
                 <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white">
                     <h4 class="text-white">Sidebar Title</h4>
                     <ul class="list-unstyled">
+                        <form action="">
+                            <select class="form-control" name="Brands">
+                                {% for brand in brands %}
+                                <option value="{{brand}}">{{brand}}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+
                         <li><a href="#">Option 1</a></li>
                         <li><a href="#">Option 2</a></li>
                         <li><a href="#">Option 3</a></li>

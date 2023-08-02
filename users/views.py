@@ -94,10 +94,13 @@ class AddToWishlistView(View):
         else:
             wishlist.products.remove(product)
 
-
         return JsonResponse({'added': added})
 
 
 class CartView(ListView):
     model = Product
     template_name = 'users/cart.html'
+
+
+class AddToCartView(View):
+    ...

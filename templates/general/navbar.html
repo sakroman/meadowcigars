@@ -7,15 +7,26 @@
         <img src="{% static 'images/logo.svg' %}" style="width: 89px; height: 42px">
       </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">
-            <span>Categories</span>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdown03">
-            <li><a class="dropdown-item" href="{% url 'products:category' category='Brands' %}">Brands</a></li>
-            <li><a class="dropdown-item" href="{% url 'products:category' category='Cigars' %}">Cigars</a></li>
-        </ul>
-    </li>
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Categories</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom" aria-labelledby="dropdown03">
+                <li><a class="dropdown-item" href="{% url 'products:list' %}?category=Cigars">Cigars</a></li>
+                <li class="dropdown dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#" id="dropdown05" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Brands
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdown05">
+                        {% for brand in brands %}
+                        <li><a class="dropdown-item" href="{% url 'products:list' %}?Brands={{brand}}">{{ brand }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
   </ul>
 
   <div class="d-flex align-items-center">
