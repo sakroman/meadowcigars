@@ -8,13 +8,13 @@
       </a>
     </li>
         <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle " href="#" id="dropdown03" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>Categories</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom" aria-labelledby="dropdown03">
                 <li><a class="dropdown-item" href="{% url 'products:list' %}?category=Cigars">Cigars</a></li>
                 <li class="dropdown dropend">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="dropdown05" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="dropdown-item dropdown-toggle " href="{% url 'products:list' %}" id="dropdown05" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Brands
                     </a>
 
@@ -47,7 +47,7 @@
           <button type="button" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-light me-2 dropdown-toggle">
             {{ request.user.username }}
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
             <li><a class="dropdown-item" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a></li>
             <li><a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a></li>
           </ul>
@@ -114,4 +114,5 @@
       </div>
     </div>
   </div>
+
 </header>

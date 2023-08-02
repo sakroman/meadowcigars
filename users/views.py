@@ -15,6 +15,8 @@ from .forms import *
 from .models import Wishlist
 from products.models import Product
 
+from DjangoStore.mixins import BrandsInContext
+
 
 class RegistrationView(SuccessMessageMixin, FormView):
     form_class = RegistrationForm
@@ -53,13 +55,13 @@ class LogoutView(View):
         return redirect('home')
 
 
-class ProfileView(DetailView):
+class ProfileView(BrandsInContext, DetailView):
     template_name = 'users/profile.html'
     model = User
     context_object_name = 'user'
 
 
-class ProfileSettingsView(LoginRequiredMixin, UpdateView):
+class ProfileSettingsView(BrandsInContext, LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'users/user_settings.html'
     form_class = ProfileSettingsForm
@@ -69,7 +71,7 @@ class ProfileSettingsView(LoginRequiredMixin, UpdateView):
         return self.request.user
 
 
-class WishlistView(LoginRequiredMixin, ListView):
+class WishlistView(LoginRequiredMixin, BrandsInContext, ListView):
     model = Product
     template_name = 'users/wishlist.html'
     context_object_name = 'wishlist_items'
@@ -97,7 +99,7 @@ class AddToWishlistView(View):
         return JsonResponse({'added': added})
 
 
-class CartView(ListView):
+class CartView(BrandsInContext, ListView):
     model = Product
     template_name = 'users/cart.html'
 

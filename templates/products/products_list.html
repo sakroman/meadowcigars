@@ -1,6 +1,6 @@
 {% extends 'general/main.html' %}
 {% load static %}
-
+{% load custom_filters %}
 {% block content %}
 <main id="main" class="dark dark-page-wrapper">
     <div class="container py-4">
@@ -11,18 +11,20 @@
                     Ordered by: {{ order_type }}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown04">
-                    <li><a class="dropdown-item" href="?order=price">By price (asc)</a></li>
-                    <li><a class="dropdown-item" href="?order=price&dir=desc">By price (desc)</a></li>
-                    <li><a class="dropdown-item" href="?order=name">By name</a></li>
+                    <li><a class="dropdown-item" href="?{% proper_order request 'order' 'price' %}">By price (asc)</a></li>
+                    <li><a class="dropdown-item" href="?{% proper_order request 'order' 'price' dir='desc' %}">By price (desc)</a></li>
+                    <li><a class="dropdown-item" href="?{% proper_order request 'order' 'name' %}">By name</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="row category-page-row">
-            <div class="col-lg-3 col-md-12">
-                <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white">
+            <div class="col-lg-3 col-md-12 ">
+                <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white ">
                     <h4 class="text-white">Sidebar Title</h4>
                     <ul class="list-unstyled">
+                        <hr>
+                        <legend>Brands</legend>
                         <form action="">
                             <select class="form-control" name="Brands">
                                 {% for brand in brands %}
@@ -30,6 +32,7 @@
                                 {% endfor %}
                             </select>
                         </form>
+                        <hr>
 
                         <li><a href="#">Option 1</a></li>
                         <li><a href="#">Option 2</a></li>

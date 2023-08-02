@@ -11,7 +11,7 @@ from users.models import Wishlist
 from DjangoStore.mixins import BrandsInContext
 
 
-class ProductView(DetailView):
+class ProductView(BrandsInContext, DetailView):
     template_name = 'products/product_details.html'
     model = Product
     context_object_name = 'product'
