@@ -442,6 +442,715 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2023-07-26T12:25:55.619Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Rocky Patel DBS (Double Broadleaf Selection) Robusto 5 1/2 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2023-07-26T12:26:00.234Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2023-07-26T12:26:23.962Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "Image for Rocky Patel DBS (Double Broadleaf Selection) Robusto 5 1/2 x 50",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2023-07-31T18:27:47.189Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "Diameter",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2023-07-31T18:28:16.275Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "Diameter",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2023-07-31T18:28:38.137Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "Diameter",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2023-07-31T18:29:57.841Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "9",
+        "object_repr": "Diameter 54",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2023-08-01T17:59:45.351Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Shape",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2023-08-01T18:00:33.643Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "ShapeToro",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2023-08-01T18:00:40.698Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "ShapeChurchill",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2023-08-01T18:00:48.267Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "4",
+        "object_repr": "ShapeCorona",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2023-08-01T18:00:54.399Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "5",
+        "object_repr": "ShapeLancero",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2023-08-01T18:00:59.868Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "6",
+        "object_repr": "ShapeGordo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.653Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "6",
+        "object_repr": "Shape-Gordo",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.656Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "5",
+        "object_repr": "Shape-Lancero",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.658Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "4",
+        "object_repr": "Shape-Corona",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.660Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "Shape-Churchill",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.662Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "Shape-Toro",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2023-08-01T18:05:24.665Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Shape-Robusto",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2023-08-01T18:06:34.212Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "9",
+        "object_repr": "Cigars",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2023-08-01T18:09:35.031Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "10",
+        "object_repr": "Brands Perdomo",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2023-08-01T20:15:45.537Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "packaging Box",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2023-08-01T20:15:49.154Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Quantity 25",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2023-08-01T20:46:56.164Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "11",
+        "object_repr": "Brands Kristoff",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2023-08-01T22:52:49.183Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "12",
+        "object_repr": "Brands 1502",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2023-08-01T22:54:25.204Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "13",
+        "object_repr": "Brands Rocky Patel",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2023-08-02T11:05:21.504Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Perdomo Reserve Limited Cameroon Edition Petit Corona 4 1/2×44",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2023-08-02T11:05:34.477Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category Cigars",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2023-08-02T11:05:53.105Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "10",
+        "object_repr": "Brands Perdomo",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2023-08-02T11:06:19.360Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "14",
+        "object_repr": "Diameter 44",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2023-08-02T11:07:10.007Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "9",
+        "object_repr": "Image for Perdomo Reserve Limited Cameroon Edition Petit Corona 4 1/2×44",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2023-08-02T11:07:15.280Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "10",
+        "object_repr": "Image for Perdomo Reserve Limited Cameroon Edition Petit Corona 4 1/2×44",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2023-08-02T11:18:17.784Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "15",
+        "object_repr": "Length 7 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2023-08-02T11:19:02.462Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "16",
+        "object_repr": "Length 5 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2023-08-02T11:20:55.260Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "17",
+        "object_repr": "Strength Mild-Medium",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2023-08-02T11:21:17.555Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "18",
+        "object_repr": "Strength Medium",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2023-08-02T11:22:13.095Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "19",
+        "object_repr": "Strength Medium-Full",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2023-08-02T11:22:20.766Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "20",
+        "object_repr": "Length 6 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2023-08-02T11:23:12.322Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "15",
+        "object_repr": "Length 7 inch",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2023-08-02T11:23:21.237Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "19",
+        "object_repr": "Strength Medium-Full",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2023-08-02T11:24:29.793Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "18",
+        "object_repr": "Strength Medium",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2023-08-02T11:24:48.258Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "21",
+        "object_repr": "Length 4 1/2 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2023-08-02T11:25:11.181Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "19",
+        "object_repr": "Strength Medium-Full",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2023-08-02T11:25:20.837Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "22",
+        "object_repr": "Length 5 1/2 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2023-08-02T11:41:25.983Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Kristoff Shade Grown Matador 6 1/2 x 56",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2023-08-02T11:42:24.356Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "23",
+        "object_repr": "Diameter 56",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2023-08-02T11:42:33.419Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "24",
+        "object_repr": "Length 6 1/2 inch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2023-08-02T11:42:59.084Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "25",
+        "object_repr": "Strength Mild-Medium",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2023-08-02T11:43:08.116Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "25",
+        "object_repr": "Strength Mild-Medium",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2023-08-02T11:43:14.241Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "17",
+        "object_repr": "Strength Mild-Medium",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2023-08-02T11:43:59.478Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "11",
+        "object_repr": "Image for Kristoff Shade Grown Matador 6 1/2 x 56",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2023-08-02T11:44:10.141Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "12",
+        "object_repr": "Image for Kristoff Shade Grown Matador 6 1/2 x 56",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2023-08-02T11:45:00.259Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "category Cigars",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2023-08-02T11:45:06.661Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "11",
+        "object_repr": "Brands Kristoff",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Product\"]}}]"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+        "name": "Cigars"
+    }
+},
+{
     "model": "products.product",
     "pk": 1,
     "fields": {
@@ -449,7 +1158,8 @@
         "slug": "perdomo-10th-anniversary-reserve-churchill-connecticut-754",
         "created": "2023-07-17T12:02:13.870Z",
         "updated": "2023-07-18T13:33:39.422Z",
-        "price": "230.00"
+        "price": "230.00",
+        "categories": []
     }
 },
 {
@@ -460,7 +1170,8 @@
         "slug": "kristoff-gc-signature-series-churchill-7-x-50",
         "created": "2023-07-17T12:06:13.031Z",
         "updated": "2023-07-18T13:38:13.415Z",
-        "price": "175.00"
+        "price": "175.00",
+        "categories": []
     }
 },
 {
@@ -471,7 +1182,8 @@
         "slug": "1502-emerald-robusto-5-x-50",
         "created": "2023-07-18T13:43:10.943Z",
         "updated": "2023-07-18T13:43:10.943Z",
-        "price": "185.00"
+        "price": "185.00",
+        "categories": []
     }
 },
 {
@@ -482,7 +1194,48 @@
         "slug": "1502-aniversario-10-toro-650",
         "created": "2023-07-23T16:09:48.967Z",
         "updated": "2023-07-23T16:10:14.989Z",
-        "price": "130.00"
+        "price": "130.00",
+        "categories": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "name": "Rocky Patel DBS (Double Broadleaf Selection) Robusto 5 1/2 x 50",
+        "slug": "rocky-patel-dbs-double-broadleaf-selection-robusto-5-12-x-50",
+        "created": "2023-07-26T12:25:55.606Z",
+        "updated": "2023-07-26T12:25:55.606Z",
+        "price": "370.00",
+        "categories": []
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "name": "Perdomo Reserve Limited Cameroon Edition Petit Corona 4 1/2×44",
+        "slug": "perdomo-reserve-limited-cameroon-edition-petit-corona-4-1244",
+        "created": "2023-08-02T11:05:21.494Z",
+        "updated": "2023-08-02T11:05:21.494Z",
+        "price": "65.00",
+        "categories": [
+            9
+        ]
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "name": "Kristoff Shade Grown Matador 6 1/2 x 56",
+        "slug": "kristoff-shade-grown-matador-6-12-x-56",
+        "created": "2023-08-02T11:41:25.977Z",
+        "updated": "2023-08-02T11:41:25.977Z",
+        "price": "175.00",
+        "categories": [
+            9
+        ]
     }
 },
 {
@@ -542,12 +1295,43 @@
     }
 },
 {
-    "model": "products.field",
-    "pk": 3,
+    "model": "products.productimage",
+    "pk": 8,
     "fields": {
-        "name": "Quantity",
-        "value": "25",
-        "product": []
+        "product": 5,
+        "image": "Rockypatel_V9Qu4pd.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 9,
+    "fields": {
+        "product": 6,
+        "image": "perdomo_cameroon_44kBOBO.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 10,
+    "fields": {
+        "product": 6,
+        "image": "perdomo_cameroon2_AicE1H5.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 11,
+    "fields": {
+        "product": 7,
+        "image": "kristoff_shade_uH1oiXs.jpg"
+    }
+},
+{
+    "model": "products.productimage",
+    "pk": 12,
+    "fields": {
+        "product": 7,
+        "image": "kristoff_shade2_BFx76io.jpg"
     }
 },
 {
@@ -560,20 +1344,209 @@
             1,
             2,
             3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 8,
+    "fields": {
+        "name": "Diameter",
+        "value": "50",
+        "product": [
+            3,
+            4,
+            5,
+            2
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 9,
+    "fields": {
+        "name": "Diameter",
+        "value": "54",
+        "product": [
+            1
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 10,
+    "fields": {
+        "name": "Brands",
+        "value": "Perdomo",
+        "product": [
+            1,
+            6
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 11,
+    "fields": {
+        "name": "Brands",
+        "value": "Kristoff",
+        "product": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 12,
+    "fields": {
+        "name": "Brands",
+        "value": "1502",
+        "product": [
+            3,
             4
         ]
     }
 },
 {
     "model": "products.field",
-    "pk": 7,
+    "pk": 13,
     "fields": {
-        "name": "packaging",
-        "value": "Box",
+        "name": "Brands",
+        "value": "Rocky Patel",
+        "product": [
+            5
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 14,
+    "fields": {
+        "name": "Diameter",
+        "value": "44",
+        "product": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 15,
+    "fields": {
+        "name": "Length",
+        "value": "7 inch",
         "product": [
             1,
-            2,
+            2
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 16,
+    "fields": {
+        "name": "Length",
+        "value": "5 inch",
+        "product": [
             3
         ]
     }
+},
+{
+    "model": "products.field",
+    "pk": 17,
+    "fields": {
+        "name": "Strength",
+        "value": "Mild-Medium",
+        "product": [
+            1,
+            7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 18,
+    "fields": {
+        "name": "Strength",
+        "value": "Medium",
+        "product": [
+            3,
+            6
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 19,
+    "fields": {
+        "name": "Strength",
+        "value": "Medium-Full",
+        "product": [
+            4,
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 20,
+    "fields": {
+        "name": "Length",
+        "value": "6 inch",
+        "product": [
+            4
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 21,
+    "fields": {
+        "name": "Length",
+        "value": "4 1/2 inch",
+        "product": [
+            6
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 22,
+    "fields": {
+        "name": "Length",
+        "value": "5 1/2 inch",
+        "product": [
+            5
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 23,
+    "fields": {
+        "name": "Diameter",
+        "value": "56",
+        "product": [
+            7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 24,
+    "fields": {
+        "name": "Length",
+        "value": "6 1/2 inch",
+        "product": [
+            7
+        ]
+    }
 }
+]

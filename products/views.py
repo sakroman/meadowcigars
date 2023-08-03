@@ -79,6 +79,11 @@ class ProductListView(BrandsInContext, ListView):
 
         return queryset.order_by(ordering)
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['strengths'] = Field.objects.filter(name='Strength')
+        return context
+
 
 class CategoryView(BrandsInContext, ListView):
     model = Product
@@ -103,7 +108,6 @@ class CategoryView(BrandsInContext, ListView):
     def get_queryset(self):
         category = self.kwargs.get('category')
         ordering = self.get_ordering()
-
 
         # categories = Product.objects.filter(categories=)
         field_instances = Field.objects.filter(name='category', value__iexact=category)

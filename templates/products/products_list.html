@@ -3,6 +3,7 @@
 {% load custom_filters %}
 {% block content %}
 <main id="main" class="dark dark-page-wrapper">
+
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="fw-bolder">Products in {{ category }}</h1>
@@ -24,14 +25,49 @@
                     <h4 class="text-white">Sidebar Title</h4>
                     <ul class="list-unstyled">
                         <hr>
-                        <legend>Brands</legend>
+
                         <form action="">
-                            <select class="form-control" name="Brands">
-                                {% for brand in brands %}
-                                <option value="{{brand}}">{{brand}}</option>
-                                {% endfor %}
-                            </select>
+                            <!-- Use the checkbox hack to handle the collapse behavior -->
+                            <input type="checkbox" id="collapseCheckbox" class="d-none">
+                            <label class="btn btn-primary d-block w-100 dropdown-toggle" for="collapseCheckbox" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-controls="collapse2">
+                                Brands
+                            </label>
+
+                            <div class="collapse" id="collapse2">
+                                <div class="form-check">
+                                    {% for brand in brands %}
+                                    <input class="form-check-input" type="checkbox" name="brands[]" value="{{ brand }}" id="brand{{ brand.id }}">
+                                    <label class="form-check-label" for="brand{{ brand.id }}">
+                                        {{ brand }}
+                                    </label>
+                                    <br>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </form>
+
+                        <hr>
+
+                            <form action="">
+                                <!-- Use the checkbox hack to handle the collapse behavior -->
+                                <input type="checkbox" id="collapseCheckbox2" class="d-none">
+                                <label class="btn btn-primary d-block w-100 dropdown-toggle" for="collapseCheckbox2" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-controls="collapseExample">
+                                    Strength
+                                </label>
+
+                                <div class="collapse" id="collapseExample">
+                                    <div class="form-check">
+                                        {% for s in strengths %}
+                                        <input class="form-check-input" type="checkbox" name="strengths[]" value="{{s.value}}" id="strength{{s.id}}">
+                                        <label class="form-check-label" for="strength{{s.id}}">
+                                            {{s.value}}
+                                        </label>
+                                        <br>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </form>
+
                         <hr>
 
                         <li><a href="#">Option 1</a></li>
@@ -63,5 +99,6 @@
             </div>
         </div>
     </div>
+
 </main>
 {% endblock content %}
