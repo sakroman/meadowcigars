@@ -3,7 +3,7 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.views.generic import DetailView, ListView
-from .models import Product, Field, Category
+from .models import Product, Field
 from django.contrib import messages
 
 from users.models import Wishlist
@@ -132,4 +132,9 @@ class CategoryView(BrandsInContext, ListView):
         context = super().get_context_data()
         context['category'] = self.kwargs.get('category')
         return context
+
+
+class BrandsView(BrandsInContext, ListView):
+    model = Field
+    template_name = 'products/brands.html'
 

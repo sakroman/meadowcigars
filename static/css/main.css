@@ -102,6 +102,13 @@ custom-vr {
   box-shadow: 0 0 0 3px #FFFFFF;
 }
 
+.search-form-btn {
+        box-shadow: 0 0 0 0px;
+        border-radius: 0px;
+}
+
+
+
 .btn:hover {
   background-color: #CC9966;
 }

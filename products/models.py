@@ -4,20 +4,13 @@ from django.db import models
 from django.utils.text import slugify
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=30, blank=False, null=False)
-
-    def __str__(self):
-        return self.name
-
-
 class Product(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(unique=True, max_length=250, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    categories = models.ManyToManyField(Category)
+
 
     def __str__(self):
         return self.name

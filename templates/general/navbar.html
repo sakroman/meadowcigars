@@ -12,13 +12,36 @@
                 <span>Categories</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom" aria-labelledby="dropdown03">
-                <li><a class="dropdown-item" href="{% url 'products:list' %}?category=Cigars">Cigars</a></li>
+                <li class="dropdown dropend">
+                    <a class="dropdown-item dropdown-toggle" href="{% url 'products:list' %}?category=Cigars" id="dropdown06" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cigars
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdown06">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'products:list' %}?category=Cigars">All Cigars</a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                    <!-- Add other characteristics dropdown items for Cigars as needed -->
+                </ul>
+                </li>
+
+
+
+
+
+
                 <li class="dropdown dropend">
                     <a class="dropdown-item dropdown-toggle " href="{% url 'products:list' %}" id="dropdown05" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Brands
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdown05">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'products:brands' %}">All Brands</a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+
                         {% for brand in brands %}
                         <li><a class="dropdown-item" href="{% url 'products:list' %}?Brands={{brand}}">{{ brand }}</a></li>
                         {% endfor %}

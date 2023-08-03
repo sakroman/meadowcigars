@@ -1,0 +1,23 @@
+{% extends 'general/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container my-5">
+        <div class="row">
+            {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+            <div class="row m-3">
+                <h2>{{ letter }}</h2>
+                <hr>
+                {% for brand in brands %}
+                    {% if brand|first == letter %}
+                        <p><a class="text-dark text-decoration-none" href="{% url 'products:list' %}?Brands={{brand}}">{{ brand }}</a></p>
+                    {% else %}
+
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

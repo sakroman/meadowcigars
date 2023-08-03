@@ -5,6 +5,15 @@ from django import template
 register = template.Library()
 
 
+@register.simple_tag
+def cigar_characteristics_dropdown():
+    from .models import Field
+    lengths = Field.objects.filter(name='Length')
+    strengths = Field.objects.filter(name='Strength')
+
+    return {'lengths': lengths, 'strengths': strengths}
+
+
 @register.filter
 def get_field_value(product, field_name):
     try:
