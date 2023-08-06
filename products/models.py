@@ -1,8 +1,29 @@
 from decimal import Decimal
 
 from django.db import models
+from django.db.models import Sum, F
 from django.utils.text import slugify
 
+from django.contrib.auth import get_user_model
+
+# Ако наследиш този абстрактен модел вместо models.Model
+# моделът, който дефинираш, ще има created_at, updated_at, etc...
+#
+# class MetadataBaseModel(models.Model):
+#     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+#     updated_at = models.DateTimeField(auto_now=True, db_index=True)
+#     created_by = models.ForeignKey(
+#         User, editable=False, null=True, on_delete=models.SET_NULL,
+#         related_name='created_%(class)s',
+#     )
+#     updated_by = models.ForeignKey(
+#         User, editable=False, null=True, on_delete=models.SET_NULL,
+#         related_name='updated_%(class)s'
+#     )
+#
+#     class Meta:
+#         abstract = True
+#
 
 class Product(models.Model):
     name = models.CharField(max_length=250)
@@ -10,7 +31,6 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-
 
     def __str__(self):
         return self.name
@@ -38,13 +58,24 @@ class Field(models.Model):
 
 
 class Order(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ORDER_STATUSES = (
+        ('cart', 'Cart'),
+        ('confirmed', 'Confirmed'),
+    )
+
+    user = models.ForeignKey('users.User',null=True, blank=True ,on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    status = models.CharField(max_length=20, choices=ORDER_STATUSES,
+                              default='cart')
 
     def __str__(self):
         return f"Order {self.id}"
+
+    def get_total_price(self):
+        return self.items.aggregate(
+            total_value=Sum(F('product__price') * F('quantity'))
+        )['total_value'] or 0
 
     def update_total_price(self):
         order_items = self.orderitem_set.all()
@@ -54,13 +85,12 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
-    unit_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return f"OrderItem {self.id}"
 
     def get_total_price(self):
-        return self.unit_price * self.quantity
+        return self.product.price * self.quantity

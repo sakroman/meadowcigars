@@ -28,6 +28,15 @@ a.nav-link:active {
     border-bottom-color: #563727;
 }
 
+.custom-border-all {
+    border-left-style: solid;
+    border-left-color: #563727;
+    border-right-style: solid;
+    border-right-color: #563727;
+    border-bottom-style: solid;
+    border-bottom-color: #563727;
+}
+
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -137,6 +146,9 @@ custom-vr {
 #collapseCheckbox2:checked + .btn-primary::after {
     transform: rotate(180deg);
 }
+#collapseCheckbox3:checked + .btn-primary::after {
+    transform: rotate(180deg);
+}
 
 
 .card-title {
@@ -170,3 +182,49 @@ i.far.fa-heart {
     padding-left: 55px;
     padding-right: 55px;
 }
+
+
+
+.cart-items-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-header {
+
+    align-items: center; /* Align content of each item horizontally */
+    margin-top: 10px;
+
+}
+
+.remove-from-cart-btn {
+    margin-right: 15px;
+}
+
+.cart-item {
+
+
+    margin-bottom: 20px; /* Adjust the spacing between items */
+}
+
+.cart-item img {
+    width: 50px; /* Set the width of the small images */
+    height: 50px; /* Set the height of the small images */
+    margin-right: 10px; /* Adjust the spacing between image and other elements */
+}
+
+.cart-item-name {
+    margin-right: 30px;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cart-item-price,
+.cart-item-count {
+    margin-right: 160px; /* Adjust the spacing between elements */
+}
+

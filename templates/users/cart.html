@@ -4,67 +4,141 @@
 {% block content %}
 
 <main id="main" class="dark dark-page-wrapper">
-      <div class="my-account-header page-title normal-title bg-dark text-white p-3 custom-border-bottom">
-    <div class="page-title-inner flex-row container text-left">
-      <div class="flex-col flex-grow medium-text-center">
-        <h1 class="uppercase mb-0 border border-dark">Cart</h1>
-      </div>
-    </div>
-  </div>
-
-        <div class="row gx-4 gx-lg-5">
-            <div class="col-lg-3 mb-4">
-                <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white">
-                    <!-- Sidebar content for Cart page -->
-                                  <div class="container py-4">
-                                    <div class="row">
-                                      <div class="col-lg-3 mb-4">
-                                <!--        {% if not request.user.image %}-->
-                                <!--        <img class="avatar img-fluid rounded-circle mb-3" src="{% static 'images/noun-profile-5034901.svg' %}" alt="" style="width: 100px;">-->
-                                <!--        {% endif %}-->
-                                        <h3 class="mb-3">{{ request.user.username }}</h3>
-                                        <ul class="nav flex-column">
-
-                                        </ul>
-
-                                      </div>
-                                    </div>
-                                  </div>
-
-                    <ul class="list-group">
-                        {% for product in cart_items %}
-                        <li class="list-group-item bg-dark border-dark">
-                            <a href="{% url 'products:product-detail' slug=product.slug %}" class="text-white">{{ product.name }}</a>
-                            <span class="text-white float-end">{{ product.price }}£</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-5 fw-bolder mb-4">Your Cart</h1>
-                {% if cart_items %}
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    {% for product in cart_items %}
-                    <div class="col">
-                        <div class="card h-100 border border-dark bg-dark text-white">
-                            <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.description }}</p>
-                                <p class="card-text">{{ product.price }}£</p>
-                                <a href="{% url 'products:product-detail' slug=product.slug %}" class="btn btn-outline-light">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <p class="lead">Your cart is empty.</p>
-                {% endif %}
+    <div class="my-account-header page-title normal-title bg-dark text-white p-3 custom-border-bottom">
+        <div class="page-title-inner flex-row container text-left">
+            <div class="flex-col flex-grow medium-text-center">
+                <h1 class="uppercase mb-0 border border-dark">Cart</h1>
             </div>
         </div>
+    </div>
 
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-9">
+            <h1 class="display-5 fw-bolder mb-4">Your Cart</h1>
+            {% if cart.items.all %}
+            <div class="cart-items-container">
+                <table class="table">
+                    <thead class="cart-item-header fw-bolder">
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart.items.all %}
+                        <tr class="cart-item">
+                            <td>
+                                <button class="btn btn-outline-light remove-from-cart-btn" data-product-id="{{ product.pk }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+
+                                <a href="{% url 'products:product-detail' slug=item.product.slug %}"><img src="{{ item.product.productimage_set.first.image.url }}" alt="{{ product.name }}"></a>
+                                <a class="text-dark text-decoration-none" href="{% url 'products:product-detail' slug=item.product.slug %}">{{ item.product.name }}</a>
+
+                            </td>
+                            <td>{{ item.product.price }}£</td>
+                                    <td>
+                                        <div class="quantity buttons_added form-flat">
+                                            <input type="button" value="-" class="minus button btn-dark" data-product-id="product_{{item.product.pk}}">
+                                            <input
+                                                type="number"
+                                                id="quantity_product_{{item.product.pk}}"
+                                                class="input-text qty bg-dark text-white"
+                                                style="border-color: #563727;"
+                                                step="1"
+                                                min="1"
+                                                max=""
+                                                name="cart[4671aeaf49c792689533b00664a5c3ef][qty]"
+                                                value="{{item.quantity}}"
+                                                title="Qty"
+                                                size="4"
+                                                placeholder=""
+                                                inputmode="numeric"
+                                            >
+                                            <input type="button" value="+" class="plus button btn-dark" data-product-id="product_{{item.product.pk}}">
+                                        </div>
+                                    </td>
+                            <td>{{ item.get_total_price }}£</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="lead">Your cart is empty.</p>
+            {% endif %}
+        </div>
+
+            <div class="col-lg-3 ">
+                <!-- Summary section -->
+                <div class="cart-summary bg-dark text-white p-3 custom-border-all">
+                    <h2 class="mb-4">Order Summary</h2>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span>Total:</span>
+                        <span class="fw-bold">{{ cart.get_total_price }}£</span>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary btn-lg d-block w-100">Order Now</a>
+                    </div>
+
+                    <div class="mt-4">
+                        <fieldset>
+                            <legend class="fw-bold">Promo Code</legend>
+                            <div class="input-group">
+                                <input type="text" autocomplete="off" placeholder="Enter Code" title="Enter Code" id="coupon-redeem-field" class="form-control">
+                                <button class="rounded btn btn-outline-primary">Apply</button>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+<script>
+    {% block javascript %}
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const minusButtons = document.querySelectorAll(".minus");
+        const plusButtons = document.querySelectorAll(".plus");
+
+        minusButtons.forEach((minusButton) => {
+            minusButton.addEventListener("click", (event) => {
+
+                const productId = event.target.dataset.productId;
+
+                const quantityInput = document.getElementById(`quantity_${productId}`);
+
+                const currentQuantity = parseInt(quantityInput.value);
+
+                if (currentQuantity > 1) {
+
+                    quantityInput.value = currentQuantity - 1;
+                }
+            });
+        });
+
+        plusButtons.forEach((plusButton) => {
+
+            plusButton.addEventListener("click", (event) => {
+
+                const productId = event.target.dataset.productId;
+
+                const quantityInput = document.getElementById(`quantity_${productId}`);
+
+                const currentQuantity = parseInt(quantityInput.value);
+
+                quantityInput.value = currentQuantity + 1;
+            });
+        });
+    });
+
+    {% endblock javascript %}
+</script>
 </main>
 
 {% endblock content %}

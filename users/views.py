@@ -17,6 +17,9 @@ from products.models import Product
 
 from DjangoStore.mixins import BrandsInContext
 
+from products.models import OrderItem, Order
+
+
 
 class RegistrationView(SuccessMessageMixin, FormView):
     form_class = RegistrationForm
@@ -99,10 +102,68 @@ class AddToWishlistView(View):
         return JsonResponse({'added': added})
 
 
+def get_cart(request):
+    cart_pk = request.session.get('cart')
+    if cart_pk:
+        cart = Order.objects.get(pk=cart_pk)
+    else:
+
+        if request.user.is_authenticated:
+            cart, _ = Order.objects.get_or_create(
+                user=request.user,
+                status='cart'
+            )
+        else:
+            cart = Order.objects.create(status='cart')
+        request.session['cart'] = cart.pk
+
+    return cart
+
+
 class CartView(BrandsInContext, ListView):
     model = Product
     template_name = 'users/cart.html'
+    context_object_name = 'products'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['cart'] = get_cart(self.request)
+        return context
+        #########################  why is this here
+        # product_ids = list(cart.keys())
+        # # product_ids = cart.items.distinct('product').values_list('product__pk', flat=True)
+        # products = Product.objects.filter(id__in=product_ids)
+        # # products = cart.items.distinct('product').values_list('product', flat=True)
+        #
+        # cart_items = [(product, cart[str(product.id)]) for product in products]
+        # print(cart_items)
+        # context['cart_items'] = cart_items
+        # return context
 
 
 class AddToCartView(View):
-    ...
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+        quantity = data.get('quantity')
+
+        if not product_id:
+            return JsonResponse({'error': 'Product ID is required.'}, status=400)
+
+        product = get_object_or_404(Product, id=product_id)
+
+        cart = get_cart(request)
+
+        product_order_item = cart.items.filter(product=product).first()
+        if product_order_item:
+            product_order_item.quantity = product_order_item.quantity + int(quantity)
+            product_order_item.save()
+        else:
+            OrderItem.objects.create(
+                order=cart,
+                product=product,
+                quantity=quantity
+            )
+
+        return JsonResponse({'added': True})

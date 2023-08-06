@@ -37,7 +37,7 @@
                             <div class="collapse" id="collapse2">
                                 <div class="form-check m-1">
                                     {% for brand in brands %}
-                                    <input class="form-check-input" type="checkbox" name="brands[]" value="{{ brand }}" id="brand{{ brand.id }}">
+                                    <input class="form-check-input region-checkbox" type="checkbox" name="Brands" value="{{ brand }}" id="brand{{ brand.id }}">
                                     <label class="form-check-label" for="brand{{ brand.id }}">
                                         {{ brand }}
                                     </label>
@@ -49,7 +49,7 @@
 
 
 
-                            <form class="pb-3" action="">
+                            <form class="" action="">
                                 <!-- Use the checkbox hack to handle the collapse behavior -->
                                 <input type="checkbox" id="collapseCheckbox2" class="d-none">
                                 <label class="search-form-btn btn btn-primary d-block w-100 dropdown-toggle" for="collapseCheckbox2" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-controls="collapseExample">
@@ -60,7 +60,7 @@
                                 <div class="collapse" id="collapseExample">
                                     <div class="form-check m-1">
                                         {% for s in strengths %}
-                                        <input class="form-check-input" type="checkbox" name="strengths[]" value="{{s.value}}" id="strength{{s.id}}">
+                                        <input class="form-check-input region-checkbox" type="checkbox" name="Strength" value="{{s.value}}" id="strength{{s.id}}">
                                         <label class="form-check-label" for="strength{{s.id}}">
                                             {{s.value}}
                                         </label>
@@ -68,6 +68,28 @@
                                         {% endfor %}
                                     </div>
                                 </div>
+                            </form>
+
+
+                            <form class="pb-3" action="">
+                                <!-- Use the checkbox hack to handle the collapse behavior -->
+                                <input type="checkbox" id="collapseCheckbox3" class="d-none">
+                                <label class="search-form-btn btn btn-primary d-block w-100 dropdown-toggle" for="collapseCheckbox3" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-controls="collapse3">
+                                    Region
+                                </label>
+
+                             <div class="collapse" id="collapse3">
+                                <div class="form-check m-1">
+                                    {% for r in regions %}
+                                    <input class="form-check-input region-checkbox" data-value="{{ r.value }}" type="checkbox" name="Region" value="{{ r.value }}" id="region{{ r.id }}">
+                                    <label class="form-check-label" for="region{{ r.id }}">
+                                        {{ r.value }}
+                                    </label>
+                                    <br>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
                             </form>
 
 
@@ -97,6 +119,53 @@
             </div>
         </div>
     </div>
+<script>
+    {% block javascript %}
+
+ document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll(".region-checkbox");
+
+        function updateURL() {
+            const selectedRegions = {};
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    const name = checkbox.name;
+                    const value = checkbox.value;
+                    if (!selectedRegions[name]) {
+                        selectedRegions[name] = [];
+                    }
+                    selectedRegions[name].push(value);
+                }
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Remove existing query parameters
+            urlParams.delete("Brands");
+            urlParams.delete("Strength");
+            urlParams.delete("Region");
+
+            // Append the selected regions as multiple query parameters
+            for (const [name, values] of Object.entries(selectedRegions)) {
+                values.forEach((value) => {
+                    urlParams.append(name, value);
+                });
+            }
+
+            // Replace the current URL without refreshing the page
+            window.history.replaceState({}, "", "?" + urlParams.toString());
+
+            // Refresh the page
+            window.location.reload();
+        }
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", updateURL);
+        });
+    });
+
+    {% endblock %}
+</script>
 
 </main>
 {% endblock content %}
