@@ -25,6 +25,7 @@ from django.contrib.auth import get_user_model
 #         abstract = True
 #
 
+
 class Product(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(unique=True, max_length=250, blank=True)
@@ -72,6 +73,9 @@ class Order(models.Model):
     def __str__(self):
         return f"Order {self.id}"
 
+    def get_info(self):
+        ...
+
     def get_total_price(self):
         return self.items.aggregate(
             total_value=Sum(F('product__price') * F('quantity'))
@@ -94,3 +98,19 @@ class OrderItem(models.Model):
 
     def get_total_price(self):
         return self.product.price * self.quantity
+
+
+class ShippingInfo(models.Model):
+    order = models.OneToOneField(Order, related_name='info', on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    company = models.CharField(max_length=100, blank=True, null=True)
+    address = models.CharField(max_length=255)
+    suite_apartment = models.CharField(max_length=100)
+    city = models.CharField(max_length=50)
+    postcode = models.CharField(max_length=12)
+    phone_number = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"ShippingInfo for Order {self.order.id}"

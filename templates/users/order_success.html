@@ -1,0 +1,18 @@
+{% extends 'general/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center fw-bold" style="height: 100vh;">
+  <p>Order Completed.</p>
+</div>
+
+<script>
+    {% block javascript %}
+
+    setTimeout(function() {
+        window.location.href = "{% url 'home' %}";
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+    {% endblock %}
+</script>
+{% endblock content %}

@@ -28,7 +28,7 @@
                                 <a class="nav-link" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="">Orders</a>
+                                <a class="nav-link" href="{% url 'user:orders' %}">Orders</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="{% url 'user:wishlist' %}">Wishlist</a>

@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from .models import User
+from products.models import ShippingInfo
 
 
 class RegistrationForm(UserCreationForm):
@@ -35,3 +36,10 @@ class ProfileSettingsForm(forms.ModelForm):
     #     self.fields['email'].widget.attrs['class'] = 'form-control'
     #     # self.fields['profile_picture'].widget.attrs['class'] = 'form-control'
     #     # self.fields['bio'].widget.attrs['class'] = 'form-control'
+
+
+class ShippingInfoForm(forms.ModelForm):
+    class Meta:
+        model = ShippingInfo
+        fields = "__all__"
+        exclude = ["order"]

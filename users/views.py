@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import FormView, DetailView, ListView, UpdateView
+from django.views.generic import FormView, DetailView, ListView, UpdateView, TemplateView
 
 from .forms import *
 from .models import Wishlist
@@ -18,7 +18,6 @@ from products.models import Product
 from DjangoStore.mixins import BrandsInContext
 
 from products.models import OrderItem, Order
-
 
 
 class RegistrationView(SuccessMessageMixin, FormView):
@@ -130,7 +129,7 @@ class CartView(BrandsInContext, ListView):
 
         context['cart'] = get_cart(self.request)
         return context
-        #########################  why is this here
+        #########################
         # product_ids = list(cart.keys())
         # # product_ids = cart.items.distinct('product').values_list('product__pk', flat=True)
         # products = Product.objects.filter(id__in=product_ids)
@@ -167,3 +166,51 @@ class AddToCartView(View):
             )
 
         return JsonResponse({'added': True})
+
+
+class CheckoutView(FormView):
+    template_name = 'users/checkout.html'
+    form_class = ShippingInfoForm
+    success_url = 'checkout/success'
+
+    def form_valid(self, form):
+        print(1)
+        print(self.request.POST)
+        cart = get_cart(self.request)
+        if not cart.status == 'confirmed':
+            cart.status = 'confirmed'
+            cart.save()
+
+        shipping_info = form.save(commit=False)
+        shipping_info.order = cart
+        shipping_info.save()
+
+        self.request.session.pop('cart', None)
+
+        # Redirect to the success URL
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'Invalid inputs')
+        print(form.errors.as_text)
+        return super().form_invalid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['cart'] = get_cart(self.request)
+        return context
+
+
+class SuccessOrder(TemplateView):
+    template_name = 'users/order_success.html'
+
+
+class OrdersView(ListView):
+    model = Order
+    template_name = 'users/orders.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['orders'] = Order.objects.filter(user=self.request.user, status='confirmed')
+        return context

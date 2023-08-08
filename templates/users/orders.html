@@ -1,0 +1,91 @@
+{% extends 'general/main.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="dark dark-page-wrapper">
+    <div class="my-account-header page-title normal-title bg-dark text-white p-3 custom-border-bottom">
+        <div class="page-title-inner flex-row container text-left">
+            <div class="flex-col flex-grow medium-text-center">
+                <h1 class="uppercase mb-0 border border-dark">Orders</h1>
+            </div>
+        </div>
+    </div>
+<div class="row gx-4 gx-lg-5">
+<div class="col-lg-3 mb-4">
+    <div id="shop-sidebar" class="sidebar-inner col-inner bg-dark text-white">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-3 mb-4">
+<!--        {% if not request.user.image %}-->
+<!--        <img class="avatar img-fluid rounded-circle mb-3" src="{% static 'images/noun-profile-5034901.svg' %}" alt="" style="width: 100px;">-->
+<!--        {% endif %}-->
+        <h3 class="mb-3">{{ request.user.username }}</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:profile' pk=request.user.pk %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:orders' %}">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:wishlist' %}">Wishlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:profile-settings' %}">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+             </div>
+           </div>
+             </div>
+        </div>
+
+<div class="col-lg-9">
+    <h1 class="display-5 fw-bolder mb-4">Your Orders</h1>
+    {% if orders %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+{% for order in orders %}
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            Order {{ order.id }}
+        </div>
+        <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+            <h5 class="card-title">Shipping Information</h5>
+            <p>Name: {{ order.info.first_name }} {{ order.info.last_name }}</p>
+            <p>E-mail: {{ order.info.email }}</p>
+            {% if order.info.company %}
+            <p>Company: {{ order.info.company }}</p>
+            {% endif %}
+            <p>Address: {{ order.info.address }}</p>
+            <p>Suite/Apartment: {{ order.info.suite_apartment }}</p>
+            <p>City: {{ order.info.city }}</p>
+            <p>Postcode: {{ order.info.postcode }}</p>
+            <p>Phone Number: {{ order.info.phone_number }}</p>
+
+            <h5 class="card-title">Order Items</h5>
+            <ul>
+                {% for item in order.items.all %}
+                <li>{{ item.product.name }}</li>
+                <li>Quantity: {{ item.quantity }}</li>
+                <li>Price: {{ item.get_total_price }}</li>
+                <hr>
+                {% endfor %}
+            </ul>
+
+            <p>Total Price: {{ order.get_total_price }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+    </div>
+    {% else %}
+    <p class="lead">You have no orders.</p>
+    {% endif %}
+</div>
+</div>
+</main>
+{% endblock content %}

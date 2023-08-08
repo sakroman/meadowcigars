@@ -13,5 +13,8 @@ urlpatterns = [
     path('wishlist/add/', AddToWishlistView.as_view(), name='add_to_wishlist'),
     path('cart', CartView.as_view(), name='cart'),
     path('cart/add/', AddToCartView.as_view(), name='add_to_cart'),
+    path('orders', OrdersView.as_view(), name='orders'),
+    path('checkout', CheckoutView.as_view(), name='checkout'),
+    path('checkout/success', SuccessOrder.as_view(), name='success'),
 
 ]
