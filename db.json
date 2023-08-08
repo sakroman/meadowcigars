@@ -1144,10 +1144,341 @@
     }
 },
 {
-    "model": "products.category",
-    "pk": 9,
+    "model": "admin.logentry",
+    "pk": 89,
     "fields": {
-        "name": "Cigars"
+        "action_time": "2023-08-04T15:40:31.256Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "26",
+        "object_repr": "Region Dominican Republic",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2023-08-04T15:41:09.561Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "27",
+        "object_repr": "Region Nicaragua",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.763Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "23",
+        "object_repr": "OrderItem 23",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.767Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "22",
+        "object_repr": "OrderItem 22",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.770Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "21",
+        "object_repr": "OrderItem 21",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.771Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "20",
+        "object_repr": "OrderItem 20",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.773Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "19",
+        "object_repr": "OrderItem 19",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.787Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "18",
+        "object_repr": "OrderItem 18",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.800Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "17",
+        "object_repr": "OrderItem 17",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.802Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "16",
+        "object_repr": "OrderItem 16",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.808Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "15",
+        "object_repr": "OrderItem 15",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.812Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "14",
+        "object_repr": "OrderItem 14",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2023-08-06T11:59:28.817Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "13",
+        "object_repr": "OrderItem 13",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2023-08-08T15:42:33.086Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "5",
+        "object_repr": "ShippingInfo for Order 8",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2023-08-08T15:42:33.092Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "4",
+        "object_repr": "ShippingInfo for Order 7",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2023-08-08T15:42:33.094Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "3",
+        "object_repr": "ShippingInfo for Order 6",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+        "action_time": "2023-08-08T15:42:33.096Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "2",
+        "object_repr": "ShippingInfo for Order 5",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+        "action_time": "2023-08-08T15:42:33.097Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "1",
+        "object_repr": "ShippingInfo for Order 1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.337Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "Order 8",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.342Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Order 7",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.343Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Order 6",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.347Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Order 5",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.349Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Order 4",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.350Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Order 3",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.352Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Order 2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+        "action_time": "2023-08-08T16:40:32.353Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Order 1",
+        "action_flag": 3,
+        "change_message": ""
     }
 },
 {
@@ -1158,8 +1489,7 @@
         "slug": "perdomo-10th-anniversary-reserve-churchill-connecticut-754",
         "created": "2023-07-17T12:02:13.870Z",
         "updated": "2023-07-18T13:33:39.422Z",
-        "price": "230.00",
-        "categories": []
+        "price": "230.00"
     }
 },
 {
@@ -1170,8 +1500,7 @@
         "slug": "kristoff-gc-signature-series-churchill-7-x-50",
         "created": "2023-07-17T12:06:13.031Z",
         "updated": "2023-07-18T13:38:13.415Z",
-        "price": "175.00",
-        "categories": []
+        "price": "175.00"
     }
 },
 {
@@ -1182,8 +1511,7 @@
         "slug": "1502-emerald-robusto-5-x-50",
         "created": "2023-07-18T13:43:10.943Z",
         "updated": "2023-07-18T13:43:10.943Z",
-        "price": "185.00",
-        "categories": []
+        "price": "185.00"
     }
 },
 {
@@ -1194,8 +1522,7 @@
         "slug": "1502-aniversario-10-toro-650",
         "created": "2023-07-23T16:09:48.967Z",
         "updated": "2023-07-23T16:10:14.989Z",
-        "price": "130.00",
-        "categories": []
+        "price": "130.00"
     }
 },
 {
@@ -1206,8 +1533,7 @@
         "slug": "rocky-patel-dbs-double-broadleaf-selection-robusto-5-12-x-50",
         "created": "2023-07-26T12:25:55.606Z",
         "updated": "2023-07-26T12:25:55.606Z",
-        "price": "370.00",
-        "categories": []
+        "price": "370.00"
     }
 },
 {
@@ -1218,10 +1544,7 @@
         "slug": "perdomo-reserve-limited-cameroon-edition-petit-corona-4-1244",
         "created": "2023-08-02T11:05:21.494Z",
         "updated": "2023-08-02T11:05:21.494Z",
-        "price": "65.00",
-        "categories": [
-            9
-        ]
+        "price": "65.00"
     }
 },
 {
@@ -1232,10 +1555,7 @@
         "slug": "kristoff-shade-grown-matador-6-12-x-56",
         "created": "2023-08-02T11:41:25.977Z",
         "updated": "2023-08-02T11:41:25.977Z",
-        "price": "175.00",
-        "categories": [
-            9
-        ]
+        "price": "175.00"
     }
 },
 {
@@ -1546,6 +1866,33 @@
         "value": "6 1/2 inch",
         "product": [
             7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 26,
+    "fields": {
+        "name": "Region",
+        "value": "Dominican Republic",
+        "product": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "products.field",
+    "pk": 27,
+    "fields": {
+        "name": "Region",
+        "value": "Nicaragua",
+        "product": [
+            1,
+            3,
+            4,
+            5,
+            6
         ]
     }
 }
