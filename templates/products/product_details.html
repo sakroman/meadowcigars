@@ -37,9 +37,11 @@
             </div>
             <h2 class="m-1 fw-bolder">{{ product.price }}£</h2>
             <div class="d-flex justify-content-right align-items-right">
+               {% if request.user.is_authenticated %}
                <button type="submit" class="wishlist-btn btn btn-outline-light" data-product-id="{{product.pk}}">
                   <i class="far fa-heart me-2"></i> Add to Wishlist
                </button>
+               {% endif %}
             </div>
          </div>
       </div>

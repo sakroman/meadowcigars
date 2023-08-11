@@ -77,9 +77,10 @@ custom-vr {
 .modal-content {
   border: 1px solid #4A2C2A;
   border-radius: 10px;
-  width: 820px;
-
-
+  width: 820px !important;
+}
+.modal-dialog-centered {
+  max-width: 820px;
 }
 
 .modal-header {

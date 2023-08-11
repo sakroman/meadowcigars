@@ -59,7 +59,9 @@
         </form>
 
     <div class="text-end ms-auto">
+      {% if request.user.is_authenticated %}
       <a href="{% url 'user:wishlist' %}"><i class="fas fa-heart mx-3 text-white"></i></a>
+        {% endif %}
       <a href="{% url 'user:cart' %}"><i class="fas fa-shopping-cart mx-3 text-white"></i></a>
       {% if not request.user.is_authenticated %}
       <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginRegisterModal">
@@ -79,14 +81,14 @@
 
 
       <!-- Modal -->
-      <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginRegisterModalLabel">Login/Register</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+    <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginRegisterModalLabel">Login/Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
 
               <div class="row">
                 <div class="col-md-6">
