@@ -6,7 +6,13 @@
 
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="fw-bolder">Products in {{ category }}</h1>
+                {% if 'category' in request.GET %}
+                    <h1 class="fw-bolder">Products in {{ request.GET.category }}</h1>
+                {% elif 'Brands' in request.GET %}
+                    <h1 class="fw-bolder">Products in {{ request.GET.Brands }}</h1>
+                {% elif 'q' in request.GET %}
+                    <h1 class="fw-bolder">Search results for "{{ request.GET.q }}"</h1>
+                {% endif %}
             <div class="dropdown">
                 <button type="button" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-light dropdown-toggle">
                     Ordered by: {{ order_type }}
@@ -119,8 +125,9 @@
             </div>
         </div>
     </div>
+
 <script>
-    {% block javascript %}
+
 
  document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll(".region-checkbox");
@@ -140,22 +147,18 @@
 
             const urlParams = new URLSearchParams(window.location.search);
 
-            // Remove existing query parameters
             urlParams.delete("Brands");
             urlParams.delete("Strength");
             urlParams.delete("Region");
 
-            // Append the selected regions as multiple query parameters
             for (const [name, values] of Object.entries(selectedRegions)) {
                 values.forEach((value) => {
                     urlParams.append(name, value);
                 });
             }
 
-            // Replace the current URL without refreshing the page
             window.history.replaceState({}, "", "?" + urlParams.toString());
 
-            // Refresh the page
             window.location.reload();
         }
 
@@ -164,7 +167,6 @@
         });
     });
 
-    {% endblock %}
 </script>
 
 </main>

@@ -31,42 +31,42 @@
           </button>
         </div>
 
-  <section class="my-5">
-<div>
-<h2 class="fw-bolder text-center">New Items</h2>
-<hr class="my-4">
-<div id="myCarousel" class="carousel carousel-dark slide m-3" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row">
-        {% for product in new_products|slice:":4" %}
-        <div class="card-pad col-sm-3">
-          <div class="card border border-dark" style="width: 18rem;">
-            <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top">
-            <div class="card-body bg-dark text-white">
-              <h5 class="card-title">{{ product.name|truncatechars:40 }}</h5>
-              <p>{{product.price}}£</p>
-              <a href="{% url 'products:product-detail' slug=product.slug %}" class="btn btn-primary">Go somewhere</a>
+<section class="my-5">
+  <div>
+    <h2 class="fw-bolder text-center">New Items</h2>
+    <hr class="my-4">
+    <div id="myCarousel" class="carousel slide carousel-dark m-3" data-bs-ride="carousel">
 
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            {% for product in new_products|slice:":4" %}
+            <div class="card-pad col-sm-3">
+              <div class="card border border-dark" style="width: 18rem;">
+                <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top">
+                <div class="card-body bg-dark text-white">
+                  <h5 class="card-title">{{ product.name|truncatechars:40 }}</h5>
+                  <p>{{product.price}}£</p>
+                  <a href="{% url 'products:product-detail' slug=product.slug %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
             </div>
+            {% endfor %}
           </div>
         </div>
-        {% endfor %}
-      </div>
+      </div> <!-- Close carousel-inner div -->
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" style="left: -170px;" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" style="right: -170px;" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
   </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" style="left: -170px;" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" style="right: -170px;" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
 </section>
+
 </main>
 {% endblock content %}

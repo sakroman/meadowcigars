@@ -53,10 +53,10 @@
   </ul>
 
   <div class="d-flex align-items-center">
-    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 px-3 d-flex align-items-center">
-      <input type="search" name="q" class="custom-search form-control border-3" placeholder="Search..." aria-label="Search">
-      <i class="fas fa-search mx-3"></i>
-    </form>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 px-3 d-flex align-items-center" action="{% url 'products:list' %}" method="get">
+            <input type="search" name="q" class="custom-search form-control border-3" placeholder="Search..." aria-label="Search">
+            <i class="fas fa-search mx-3"></i>
+        </form>
 
     <div class="text-end ms-auto">
       <a href="{% url 'user:wishlist' %}"><i class="fas fa-heart mx-3 text-white"></i></a>

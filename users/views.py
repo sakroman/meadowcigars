@@ -101,6 +101,23 @@ class AddToWishlistView(View):
         return JsonResponse({'added': added})
 
 
+class RemoveFromWishlistView(View):
+    def post(self, request, *args, **kwargs):
+        added = True
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+
+        product = get_object_or_404(Product, id=product_id)
+        wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+        if product in wishlist.products.all():
+            wishlist.products.remove(product)
+            added = False
+        else:
+            JsonResponse
+
+        return JsonResponse({'added': added})
+
+
 def get_cart(request):
     cart_pk = request.session.get('cart')
     if cart_pk:
@@ -129,16 +146,6 @@ class CartView(BrandsInContext, ListView):
 
         context['cart'] = get_cart(self.request)
         return context
-        #########################
-        # product_ids = list(cart.keys())
-        # # product_ids = cart.items.distinct('product').values_list('product__pk', flat=True)
-        # products = Product.objects.filter(id__in=product_ids)
-        # # products = cart.items.distinct('product').values_list('product', flat=True)
-        #
-        # cart_items = [(product, cart[str(product.id)]) for product in products]
-        # print(cart_items)
-        # context['cart_items'] = cart_items
-        # return context
 
 
 class AddToCartView(View):
@@ -168,14 +175,30 @@ class AddToCartView(View):
         return JsonResponse({'added': True})
 
 
+class RemoveFromCartView(View):
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+        if product_id:
+
+            cart = get_cart(request)
+            try:
+                product = Product.objects.get(pk=product_id)
+                cart.items.filter(product=product).delete()
+                return JsonResponse({"message": "Product removed from cart."})
+            except Product.DoesNotExist:
+                return JsonResponse({"error": "Product not found."}, status=400)
+
+        else:
+            return JsonResponse({"error": "Invalid product ID."}, status=400)
+
+
 class CheckoutView(FormView):
     template_name = 'users/checkout.html'
     form_class = ShippingInfoForm
     success_url = 'checkout/success'
 
     def form_valid(self, form):
-        print(1)
-        print(self.request.POST)
         cart = get_cart(self.request)
         if not cart.status == 'confirmed':
             cart.status = 'confirmed'
@@ -187,7 +210,6 @@ class CheckoutView(FormView):
 
         self.request.session.pop('cart', None)
 
-        # Redirect to the success URL
         return super().form_valid(form)
 
     def form_invalid(self, form):

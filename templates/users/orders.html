@@ -71,12 +71,12 @@
                 {% for item in order.items.all %}
                 <li>{{ item.product.name }}</li>
                 <li>Quantity: {{ item.quantity }}</li>
-                <li>Price: {{ item.get_total_price }}</li>
+                <li>Price: {{ item.get_total_price }}£</li>
                 <hr>
                 {% endfor %}
             </ul>
 
-            <p>Total Price: {{ order.get_total_price }}</p>
+            <p>Total Price: {{ order.get_total_price }}£</p>
         </div>
     </div>
 </div>

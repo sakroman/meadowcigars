@@ -37,15 +37,13 @@ class ProductListView(BrandsInContext, ListView):
     context_object_name = 'products'
 
     def get_ordering(self):
-        ordering = self.request.GET.get('order', 'name')  # Default ordering by name
-        direction = self.request.GET.get('dir', 'asc')  # Default direction is ascending
+        ordering = self.request.GET.get('order', 'name')
+        direction = self.request.GET.get('dir', 'asc')
 
-        # Ensure the ordering field is valid
         valid_ordering = ['name', 'price']
         if ordering not in valid_ordering:
             ordering = 'name'
 
-        # If direction is not 'asc', set to '-' for descending order
         direction = '' if direction == 'asc' else '-'
 
         return f"{direction}{ordering}"
@@ -53,10 +51,8 @@ class ProductListView(BrandsInContext, ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # Create a copy of the GET parameters
         get_copy = self.request.GET.copy()
 
-        # Temporarily remove 'order' and 'dir' parameters from the copied QueryDict
         order = get_copy.pop('order', None)
         direction = get_copy.pop('dir', None)
 
@@ -74,7 +70,6 @@ class ProductListView(BrandsInContext, ListView):
         if direction:
             get_copy['dir'] = direction
 
-        # Get the final ordering based on 'order' and 'dir' parameters
         ordering = self.get_ordering()
 
         return queryset.order_by(ordering)
@@ -93,15 +88,13 @@ class CategoryView(BrandsInContext, ListView):
     ordering = 'name'
 
     def get_ordering(self):
-        ordering = self.request.GET.get('order', 'name')  # Default ordering by name
-        direction = self.request.GET.get('dir', 'asc')  # Default direction is ascending
+        ordering = self.request.GET.get('order', 'name')
+        direction = self.request.GET.get('dir', 'asc')
 
-        # Ensure the ordering field is valid
         valid_ordering = ['name', 'price']
         if ordering not in valid_ordering:
             ordering = 'name'
 
-        # If direction is not 'asc', set to '-' for descending order
         direction = '' if direction == 'asc' else '-'
 
         return f"{direction}{ordering}"

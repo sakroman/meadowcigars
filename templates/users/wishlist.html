@@ -51,21 +51,22 @@
                 {% if wishlist_items %}
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     {% for product in wishlist_items %}
-                            <div class="col">
-                                <div class="card h-100 border border-dark bg-dark text-white position-relative">
-                                    <!-- X button to remove item from wishlist -->
+                        <div class="col">
+                            <div class="card h-100 border border-dark bg-dark text-white position-relative">
+                                <!-- X button to remove item from wishlist -->
+                                <button class="btn remove-from-wishlist-btn position-absolute top-0 end-0 p-0 border-0 bg-transparent" data-product-id="{{ product.pk }}">
+                                    <i class="fa-solid fa-xmark fa-lg text-danger"></i>
+                                </button>
 
-
-                                    <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ product.name }}</h5>
-                                        <p class="card-text">{{ product.description }}</p>
-                                        <p class="card-text">{{ product.price }}£</p>
-                                        <a href="{% url 'products:product-detail' slug=product.slug %}" class="btn btn-outline-light">View Details</a>
-                                    </div>
+                                <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <p class="card-text">{{ product.price }}£</p>
+                                    <a href="{% url 'products:product-detail' slug=product.slug %}" class="btn btn-outline-light">View Details</a>
                                 </div>
                             </div>
-
+                        </div>
                     {% endfor %}
                 </div>
                 {% else %}
@@ -74,6 +75,43 @@
             </div>
         </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const removeButtons = document.querySelectorAll(".remove-from-wishlist-btn");
+
+    removeButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const productId = button.getAttribute("data-product-id");
+            removeFromWishlist(productId);
+        });
+    });
+});
+
+function removeFromWishlist(productId) {
+    const removeUrl = '{% url 'user:remove_from_wishlist' %}';
+    const csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+
+    fetch(removeUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken
+        },
+        body: JSON.stringify({
+            product_id: productId
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message); // Handle success response
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error("Error removing product from wishlist:", error);
+    });
+}
+
+</script>
 
 </main>
 
