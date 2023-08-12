@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import FormView, DetailView, ListView, UpdateView, TemplateView
 
@@ -197,6 +197,13 @@ class CheckoutView(FormView):
     template_name = 'users/checkout.html'
     form_class = ShippingInfoForm
     success_url = 'checkout/success'
+
+    def dispatch(self, request, *args, **kwargs):
+        cart = get_cart(request)
+        if not cart.items.exists():  # Check if the cart is empty
+            messages.error(request, 'Your cart is empty. Please add items before proceeding.')
+            return redirect(reverse('user:cart'))  # Redirect to cart page or another appropriate page
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         cart = get_cart(self.request)

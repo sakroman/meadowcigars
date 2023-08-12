@@ -42,7 +42,7 @@
           <div class="row">
             {% for product in new_products|slice:":4" %}
             <div class="card-pad col-sm-3">
-              <div class="card border border-dark" style="width: 18rem;">
+              <div class="card border border-dark" >
                 <img src="{{ product.productimage_set.first.image.url }}" class="card-img-top">
                 <div class="card-body bg-dark text-white">
                   <h5 class="card-title">{{ product.name|truncatechars:40 }}</h5>
@@ -54,7 +54,7 @@
             {% endfor %}
           </div>
         </div>
-      </div> <!-- Close carousel-inner div -->
+      </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" style="left: -170px;" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
