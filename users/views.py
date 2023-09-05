@@ -28,24 +28,39 @@ class RegistrationView(SuccessMessageMixin, FormView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return super().form_valid(form)
+        return JsonResponse({'success_url': self.get_success_url()})
 
     def form_invalid(self, form):
-        messages.error(self.request, 'An error occurred during registration')
-        print(form.errors)
-        return super().form_invalid(form)
 
-    def render_to_response(self, context, **response_kwargs):
-        return HttpResponseRedirect(self.get_success_url())
+        errors = {
+            'username': form.errors.get('username', None),
+            'email': form.errors.get('email', None),
+            'password1': form.errors.get('password1', None),
+            'password2': form.errors.get('password2', None),
+        }
+        return JsonResponse({'errors': errors}, status=400)
 
 
 class LoginPageView(LoginView):
     success_url = reverse_lazy('home')
 
+    def form_valid(self, form):
+        user = form.get_user()
+        login(self.request, user)
+
+        success_url = self.get_success_url()
+
+        response_data = {'success_url': success_url}
+
+        return JsonResponse(response_data)
+
     def form_invalid(self, form):
-        messages.error(self.request, 'Invalid username or password.')
-        print(form.errors)
-        return redirect('home')
+
+        errors = {
+            'username': 'Invalid username or password.',
+            'password': 'Invalid username or password.',
+        }
+        return JsonResponse({'errors': errors}, status=400)
 
     def render_to_response(self, context, **response_kwargs):
         return HttpResponseRedirect(self.get_success_url())
@@ -200,9 +215,9 @@ class CheckoutView(FormView):
 
     def dispatch(self, request, *args, **kwargs):
         cart = get_cart(request)
-        if not cart.items.exists():  # Check if the cart is empty
+        if not cart.items.exists():
             messages.error(request, 'Your cart is empty. Please add items before proceeding.')
-            return redirect(reverse('user:cart'))  # Redirect to cart page or another appropriate page
+            return redirect(reverse('user:cart'))
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
@@ -220,8 +235,9 @@ class CheckoutView(FormView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, 'Invalid inputs')
-        print(form.errors.as_text)
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f"{field.capitalize()}: {error}")
         return super().form_invalid(form)
 
     def get_context_data(self, **kwargs):

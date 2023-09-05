@@ -59,6 +59,7 @@ class ProductListView(BrandsInContext, ListView):
         q = get_copy.pop('q', None)
         if q:
             q = q[0]
+
             queryset = queryset.filter(name__icontains=q)
 
         for key, value in get_copy.items():
@@ -103,18 +104,15 @@ class CategoryView(BrandsInContext, ListView):
         category = self.kwargs.get('category')
         ordering = self.get_ordering()
 
-        # categories = Product.objects.filter(categories=)
         field_instances = Field.objects.filter(name='category', value__iexact=category)
         product_ids = field_instances.values_list('product', flat=True)
 
         search_query = self.request.GET.get('q')
         if search_query:
-            # Redirect the user to the category view with the search query
 
-            # Apply search filter to the queryset
             queryset = Product.objects.filter(
                 id__in=product_ids,
-                name__icontains=search_query  # Filter products with names containing the search query
+                name__icontains=search_query
             ).order_by(ordering)
 
         else:

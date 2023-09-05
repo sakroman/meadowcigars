@@ -6,9 +6,7 @@ from django.utils.text import slugify
 
 from django.contrib.auth import get_user_model
 
-# Ако наследиш този абстрактен модел вместо models.Model
-# моделът, който дефинираш, ще има created_at, updated_at, etc...
-#
+
 # class MetadataBaseModel(models.Model):
 #     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 #     updated_at = models.DateTimeField(auto_now=True, db_index=True)
@@ -72,9 +70,6 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order {self.id}"
-
-    def get_info(self):
-        ...
 
     def get_total_price(self):
         return self.items.aggregate(
